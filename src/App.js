@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Navigation from "./Components/Navigation/Navigation.js";
 import ImageLinkForm from "./Components/ImageFormLink/ImageFormLink";
-import Colors from "./Components/Colors/Colors";
+// import Colors from "./Components/Colors/Colors";
 import FaceRecognition from "./Components/FaceRecognitionBox/FaceRecognitionBox";
 import Clarifai from "clarifai";
 
@@ -50,7 +50,7 @@ class App extends React.Component {
       <div className="App">
         <Navigation />
         {this.state.colorsArray.map((color) => {
-          return <p>{color}</p>
+          return <span className="colors" style={{background: color}}> {color} </span>
         })}
         <ImageLinkForm
           onInputChange={this.onInputChange}
