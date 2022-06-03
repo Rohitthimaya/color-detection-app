@@ -1,15 +1,15 @@
 import React from 'react';
 
-const Colors = () => {
+const Colors = ({colorsArray}) => {
   return (
-    <div>
-      {/* <div className='white f2'>
-        {`Colors are`}
-      </div> */}
+    <>
       <div className='white f2'>
-        {`#fff #ccc #cff`}
+        <h1>This are the Colors: {colorsArray}</h1>
+        {/* {colorsArray.map((color) => {
+          return <p>{color}</p>
+        })} */}
       </div>
-    </div>
+    </>
   );
 }
 
