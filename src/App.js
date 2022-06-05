@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Navigation from "./Components/Navigation/Navigation.js";
 import ImageLinkForm from "./Components/ImageFormLink/ImageFormLink";
-// import Colors from "./Components/Colors/Colors";
+import SignIn from "./Components/SignIn/SignIn";
 import FaceRecognition from "./Components/FaceRecognitionBox/FaceRecognitionBox";
 import Clarifai from "clarifai";
 
@@ -17,6 +17,7 @@ class App extends React.Component {
     this.state = {
       input: "",
       colorsArray: [],
+      route: 'signin'
     };
   }
 
@@ -52,11 +53,19 @@ class App extends React.Component {
         {this.state.colorsArray.map((color) => {
           return <span className="colors" style={{background: color}}> {color} </span>
         })}
+        { this.state.route === 'signin'
+        ? <SignIn />
+        : (
+        <>
         <ImageLinkForm
           onInputChange={this.onInputChange}
           onButtonClicked={this.onButtonClicked}
         />
         <FaceRecognition imageUrl={this.state.input} />
+        </>
+        )}
+        
+        
       </div>
     );
   }
