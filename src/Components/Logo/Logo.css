@@ -2,3 +2,8 @@
     background: linear-gradient(89deg, #FF5EDF 0%, #04C8DE 100%);
     cursor: pointer;
   }
+
+.ma4{
+    display: flex;
+    justify-content: flex-start;
+  }
